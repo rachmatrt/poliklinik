@@ -2,21 +2,22 @@
 include "nyambung.php";
 
 
-if (isset($_POST['adddokter'])) {
+
 $namalengkap = $_POST['namalengkap'];
 $alamat = $_POST['alamat'];
 $username = $_POST['username'];
 $password = $_POST['password'];
-$date = date_timestamp_get();
+$date = date("y-m-d h:m:s");
 
-mysqli_query($conn,"INSERT INTO users VALUES (null,'$username','$password','$namalengkap','$alamat', 'dokter',null,'$date' ");
+$adddokter = "INSERT INTO users VALUES ('','$username','$password','$namalengkap','$alamat', 'dokter', '', '$date','$date' )"; 
 
-	header('location:../dokter.php');
+if ($conn->query($adddokter) === TRUE) {
+    header('location: ../dokter.php');
 
 } else {
-	
-	echo "gagal masuk";
- }
+    echo "Error: " . $sql . "<br>" . $conn->error;
+    header('location: formdokter.php');
+}
 
-$conn->close();
+
 ?>

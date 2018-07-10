@@ -13,7 +13,7 @@ $urut = 0;
         <li class="breadcrumb-item active">List Dokter</li>
      </ol>
      <div style="text-align: right; margin-bottom: 2%;">
-         <a href="archive/formdokter.php" class="btn btn-success">Tambah</a>
+         <a href="formdokter.php" class="btn btn-success">Tambah</a>
      </div>
      <table class="table table-striped">
      		<tr>
