@@ -14,7 +14,7 @@
      <div class="card card-login mx-auto mt-5">
       <div class="card-header">Tambah Dokter</div>
       <div class="card-body">
-        <form name="tambahdokter" method="POST" action="behind/tambahdokter.php">
+        <form  method="POST" action="behind/tambahdokter.php">
           <div class="form-group">
             <label for="exampleInputEmail1">Nama Lengkap</label>
             <input class="form-control"  type="text" aria-describedby="namalengkap" placeholder="Nama Lengkap" name="namalengkap" >

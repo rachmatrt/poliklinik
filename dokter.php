@@ -15,24 +15,25 @@ $urut = 0;
      <div style="text-align: right; margin-bottom: 2%;">
          <a href="formdokter.php" class="btn btn-success">Tambah</a>
      </div>
-     <table class="table table-striped">
+     <table class="table table-striped" >
      		<tr>
-     			<td>No</td>
-     			<td>Nama</td>
-                <td>Alamat</td>
-                <td>Action</td>
+     			<td >No</td>
+     			<td >Nama</td>
+                <td >Alamat</td>
+                <td >Action</td>
      		</tr>
             <?php while ($row = $query->fetch_array()){ $urut++; ?>
-            <tr>
-             <td><?php echo $urut ?> </td>
-             <td><?php echo $row["nama_lengkap"] ?></td>
-             <td><?php echo $row["alamat"] ?></td>  
+            <tr>  
+             <td ><?php echo $urut ?> </td>
+             <td ><?php echo $row["nama_lengkap"] ?></td>
+             <td ><?php echo $row["alamat"] ?></td>  
              <td>
                 <a href="" class="btn btn-primary">Edit</a>
-                <a href="" class="btn btn-danger">Hapus</a>
+                <a href="behind/hapusdokter.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Hapus</a>
+
             </td> 
-            </tr> <?php } ?>           
-     </table>
+            </tr> <?php } ?>         
+     </table> 
 	</div>
 </div>
 
