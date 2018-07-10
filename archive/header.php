@@ -35,11 +35,16 @@
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
+        </li><li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="dokter.php">
+            <i class="fa fa-fw fa-address-book"></i>
+            <span class="nav-link-text">Master Dokter</span>
+          </a>
         </li>
       </ul>
        <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Logout">
-          <a class="nav-link text-center" href="">
+          <a class="nav-link text-center" href="archive/login.php">
             <i class="fa fa-fw fa-sign-out" style="font-size: 24px;"></i>
             </a>
         </li>
