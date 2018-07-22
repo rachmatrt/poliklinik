@@ -4,8 +4,7 @@ $date = date("d-m-Y");
 $time = date("h:m:s");
 ?>
 
-
- <div class="container-fluid">
+ <div id="utama" class="container-fluid">
   <div class="row">
    <div class="col-sm-6 col-md-6 col-xs-6" >
    	<div class="card card-login mx-auto mt-5">
@@ -72,7 +71,7 @@ $time = date("h:m:s");
       <div class="card-header" style="background-color: #88c3f7; text-align: center;color:#ffffff; font-size: 24px;">
       Poliklinik <?php echo $row["nama_poli"]; ?>
       </div>
-    <form method="POST" action="behind/nomor.php?id=<?php echo $row["id"];?>&noantri=<?php echo $row2["no_antrian"];?>"">  
+    <form onclick ="behind/nomor.php?id=<?php echo $row["id"];?>&noantri=<?php echo $row2["no_antrian"];?>"">  
       <?php 
     $date2 = date("Y-m-d");
     $id2 = (int) $row["id"];

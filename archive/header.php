@@ -35,10 +35,17 @@
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
-        </li><li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="masdok">
           <a class="nav-link" href="dokter.php">
-            <i class="fa fa-fw fa-address-book"></i>
+            <i class="fa fa-fw fa-user-md"></i>
             <span class="nav-link-text">Master Dokter</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="masob">
+          <a class="nav-link" href="obat.php">
+            <i class="fa fa-fw fa-medkit"></i>
+            <span class="nav-link-text">Master Obat</span>
           </a>
         </li>
       </ul>
