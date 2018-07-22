@@ -44,6 +44,5 @@
 </div>
 
 <?php 
-$conn->close();
 include "archive/footer.php";
 ?>

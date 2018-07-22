@@ -8,7 +8,7 @@ $urut = 0;
     <div class="container-fluid">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.php">Dashboard</a>
+          <a href="dashboard.php">Dashboard</a>
         </li>
         <li class="breadcrumb-item active">List Dokter</li>
      </ol>
@@ -28,8 +28,8 @@ $urut = 0;
              <td ><?php echo $row["nama_lengkap"] ?></td>
              <td ><?php echo $row["alamat"] ?></td>  
              <td>
-                <a href="" class="btn btn-primary">Edit</a>
-                <a href="behind/hapusdokter.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Hapus</a>
+                <a href="editdokter.php?id=<?php echo $row["id"]; ?>" class="btn btn-primary">Edit</a>
+                <a onclick="if(confirm('Apakah anda ingin menghapus ?')) { window.location = 'behind/hapusdokter.php?id=<?php echo $row["id"]; ?>' }" class="btn btn-danger">Hapus</a>
 
             </td> 
             </tr> <?php } ?>         
