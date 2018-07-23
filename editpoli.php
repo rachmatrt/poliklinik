@@ -14,7 +14,7 @@ $row = mysqli_fetch_array($result);
           <a href="index.php">Dashboard</a>
         </li>
         <li class="breadcrumb-item">
-        	<a href="obat.php"> List Poliklinik</a>
+        	<a href="poli.php"> List Poliklinik</a>
         </li>
         <li class="breadcrumb-item active"> Edit Poliklinik</li>
      </ol>

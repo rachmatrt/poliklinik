@@ -16,7 +16,7 @@
       <div class="card-body">
         <form  method="POST" action="behind/addpoli.php">
           <div class="form-group">
-            <label for="exampleInputEmail1">Nama Poli</label>
+            <label for="exampleInputEmail1">Nama Poliklinik</label>
             <input class="form-control"  type="text" aria-describedby="namalengkap" placeholder="Nama poli" name="namapoli" required>
             
             <label for="exampleInputEmail1">Harga</label>
