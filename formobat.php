@@ -31,7 +31,7 @@
 
             <div style="text-align: center; margin-top: 4%;">
             <button name="addobat" class="btn btn-success">Tambah</button>
-            <a onclick="if(confirm('Apakah anda ingin membatalkan penambahan obat ?')) { window.location = 'obat.php' }" class="btn btn-danger">Batal</a>
+            <a onclick="if(confirm('Apakah anda ingin membatalkan penambahan Dokter ?')) { window.location = 'obat.php' }" class="btn btn-danger">Batal</a>
             </div >
 
           </div>

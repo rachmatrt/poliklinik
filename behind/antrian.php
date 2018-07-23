@@ -17,7 +17,7 @@ if ($conn->query($masukan) === TRUE) {
 
 } else {
 	echo "Error :" . $masukan . "<br>". $conn->error;
-	header('location : ../index.php');
+	//header('location : ../index.php');
 }
 
 $conn->close();

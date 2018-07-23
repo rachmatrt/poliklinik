@@ -36,22 +36,35 @@
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="masdok">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Master Antrianr">
+          <a class="nav-link" href="antrianhal.php">
+            <i class="fa fa-fw fa-wheelchair"></i>
+            <span class="nav-link-text">Master Antrian </span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Master Dokter">
           <a class="nav-link" href="dokter.php">
             <i class="fa fa-fw fa-user-md"></i>
             <span class="nav-link-text">Master Dokter</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="masob">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Master Obat">
           <a class="nav-link" href="obat.php">
             <i class="fa fa-fw fa-medkit"></i>
             <span class="nav-link-text">Master Obat</span>
           </a>
         </li>
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Master Poliklinik">
+          <a class="nav-link" href="poli.php">
+            <i class="fa fa-fw fa-heartbeat"></i>
+            <span class="nav-link-text">Master Poliklinik</span>
+          </a>
+        </li>
+        
       </ul>
        <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Logout">
-          <a class="nav-link text-center" href="archive/login.php">
+          <a class="nav-link text-center" href="index.php">
             <i class="fa fa-fw fa-sign-out" style="font-size: 24px;"></i>
             </a>
         </li>
