@@ -9,10 +9,10 @@
         <li class="breadcrumb-item">
         	<a href="antrianhal.php"> List Antrian</a>
         </li>
-        <li class="breadcrumb-item active"> Form Antrian</li>
+        <li class="breadcrumb-item active"> Form Periksa</li>
      </ol>
      <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Form Tindakan</div>
+      <div class="card-header">Form Periksa</div>
       <div class="card-body">
         <form  method="POST" action="behind/addpoli.php">
           <div class="form-group">

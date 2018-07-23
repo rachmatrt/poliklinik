@@ -49,7 +49,7 @@ $time = date("h:m:s");
              <td ><?php echo $row["no_antrian"] ?></td>
              <td ><?php echo $row["nama_poli"] ?></td>  
              <td >
-                <a href="formtindakan.php?id=<?php echo $idpoli; ?>&antri=<?php echo $row["id"]; ?>" class="btn btn-success">Tindakan</a>
+                <a href="formperiksa.php?id=<?php echo $idpoli; ?>&antri=<?php echo $row["id"]; ?>" class="btn btn-success">Periksa</a>
             </td> 
             </tr> <?php } ?>         
      </table> 

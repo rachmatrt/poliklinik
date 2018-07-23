@@ -42,6 +42,12 @@
             <span class="nav-link-text">Master Antrian </span>
           </a>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Master Antrianr">
+          <a class="nav-link" href="periksa.php">
+            <i class="fa fa-fw fa-stethoscope"></i>
+            <span class="nav-link-text">Master Pemeriksaaan </span>
+          </a>
+        </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Master Dokter">
           <a class="nav-link" href="dokter.php">
             <i class="fa fa-fw fa-user-md"></i>
