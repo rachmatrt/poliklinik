@@ -39,7 +39,7 @@ $time = date("h:m:s");
      		</tr>
             <?php 
             $idpoli = (int) $_POST['poli'];
-            $query=$conn->query("SELECT * FROM antrian JOIN poli on poli.id = antrian.poli_id  WHERE poli_id = '$idpoli' ORDER BY tanggal = '$date'  ");
+            $query=$conn->query("SELECT * FROM antrian JOIN poli on poli.id = antrian.poli_id  WHERE poli_id = '$idpoli' AND tanggal = '$date'  ");
             $urut = 0;
             while ($row = $query->fetch_array()){ $urut++; ?>
             <tr align="center">  
@@ -49,7 +49,7 @@ $time = date("h:m:s");
              <td ><?php echo $row["no_antrian"] ?></td>
              <td ><?php echo $row["nama_poli"] ?></td>  
              <td >
-                <a href="formperiksa.php?id=<?php echo $idpoli; ?>&antri=<?php echo $row["id"]; ?>" class="btn btn-success">Periksa</a>
+                <a href="formperiksa.php?poli=<?php echo $row["poli_id"];?>&antri=<?php echo $row["no_antrian"]; ?>" class="btn btn-success">tindakan</a>
             </td> 
             </tr> <?php } ?>         
      </table> 

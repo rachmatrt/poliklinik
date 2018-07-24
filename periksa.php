@@ -11,9 +11,9 @@ $time = date("h:m:s");
         <li class="breadcrumb-item">
           <a href="dashboard.php">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">List Antrian</li>
+        <li class="breadcrumb-item active">List Pemeriksaan</li>
      </ol>
-     <div class="alert alert-primary" style="font-size: 46px; text-align: center;"> Master Antrian </div>
+     <div class="alert alert-primary" style="font-size: 46px; text-align: center;"> Master Pemeriksaan</div>
      <div class="alert alert-warning" style="text-align: center;"> <?php  echo $date2."   ".$time;?> </div>
      
      <div class="mt-5">

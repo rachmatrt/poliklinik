@@ -85,15 +85,15 @@ $time = date("h:m:s");?>
       <div class="card-header" style="background-color: #88c3f7; text-align: center;color:#ffffff; font-size: 24px;">
       Poliklinik <?php echo $row["nama_poli"]; ?>
       </div>
+    
+      <div class="card-body">
       <?php 
     $date2 = date("Y-m-d");
     $id2 = (int) $row["id"];
     $query2 = "SELECT * FROM antrian WHERE poli_id = '$id2' AND tanggal = '$date2' ORDER BY no_antrian DESC LIMIT 1";
     $hasil2 = mysqli_query($conn, $query2);
     $row2 = mysqli_fetch_array($hasil2);
-      ?>
-      <div class="card-body">
-        
+      ?>    
           <div class="form-group" style="text-align: center;">
            <label style="font-size: 20px;"> Jumlah Antrian : </label>
            <div class="alert alert-danger" style="font-size: 46px; padding :0px 0px 0px 0px;"><?php echo $row2["no_antrian"]; ?></div>
@@ -108,4 +108,6 @@ $time = date("h:m:s");?>
  </div>
 </div>
 
-<?php include "archive/footer.php" ; ?>
+<?php 
+$conn->close();
+include "archive/footer.php" ; ?>
