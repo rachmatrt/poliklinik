@@ -17,37 +17,45 @@ $time = date("h:m:s");
      <div class="alert alert-warning" style="text-align: center;"> <?php  echo $date2."   ".$time;?> </div>
      
      <div class="mt-5">
-     <table class="table table-striped" id="table" style="z-index: 1;">
+     <table class="table table-striped" >
      		<tr align="center">
      			<td width="50px">No</td>
-                <td> Antrian </td>
+                <td> Kode </td>
                 <td> Nama Pasien </td>
      			<td> Nama Dokter </td>
-                <td> Pemeriksaan </td>
+                <td width="500px"> Pemeriksaan </td>
                 <td> Biaya </td>
-                <td> </td>
+                <td> Poliklinik </td>
+                <td> Action </td>
 
 
      		</tr>
             <?php 
             
-            $query= $conn->query("SELECT * FROM pemeriksaan JOIN poli_tindakan on poli_tindakan.id = pemeriksaan.tindakan_id JOIN users ON users.id = pemeriksaan.dokter_id JOIN antrian ON antrian.id = pemeriksaan.antrian_id ORDER BY tanggal ='$date' AND no_antrian ");
-            $urut = 0;
-            while ($row = $query->fetch_array()){ $urut++; ?>
+            $query= $conn->query("SELECT * FROM pemeriksaan JOIN poli_tindakan on poli_tindakan.id = pemeriksaan.tindakan_id JOIN users ON users.id = pemeriksaan.dokter_id JOIN antrian ON antrian.id = pemeriksaan.antrian_id group by antrian_id ORDER BY tanggal ='$date' ");
+            
+            while ($row = $query->fetch_array()){ $urut++; 
+            $poline = (int) $row["poli_id"];
+            $query2 = "SELECT * FROM poli JOIN antrian ON antrian.poli_id = poli.id where poli_id = '$poline'";
+            $result2 = mysqli_query($conn,$query2);
+            $row2 = mysqli_fetch_array($result2);
+
+            ?>
             <tr align="center">  
              <td ><?php echo $urut; ?> </td>
-             <td ><?php echo $row["no_antrian"]; ?></td>
+             <td ><?php echo $row["id"]; ?></td>          
              <td ><?php echo $row["nama_pasien"]; ?></td>
              <td ><?php echo $row["nama_lengkap"]; ?></td>
              <td ><?php echo $row["nama_tindakan"]; ?></td>
              <td ><?php echo $row["biaya_tindakan"]; ?></td>
-
-
-
+             <td ><?php echo $row2["nama_poli"]; ?></td>
              <td >
-                <a href=".php?id=<?php echo $idpoli; ?>&antri=<?php echo $row["id"]; ?>" class="btn btn-success">bayar</a>
+               <a href="bayar.php?poli=<?php echo $poline; ?>&antri=<?php echo $row["id"];?>" class="btn btn-success"> Bayar </a>
+                <a href="cetak.php?idpoli=<?php echo $poline; ?>&antri=<?php echo $row["id"];?>&dokter=<?php echo $row["dokter_id"];?>&action=<?php echo $row["tindakan_id"]; ?>" class="btn btn-warning"> Cetak </a>
+                <a href="" class="btn btn-danger">Upload</a>
             </td> 
-            </tr> <?php $conn->error; } ?>         
+           <?php $conn->error; } ?>
+            </tr>          
      </table> 
      <div >
      

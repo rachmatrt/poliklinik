@@ -1,15 +1,19 @@
 <?php include "archive/header.php";
-include "behind/nyambung.php"
-$antrian = (int) $_GET['antri'];
+include "behind/nyambung.php";
+$antri_id = (int) $_GET['idantri'];
 $idpoli = (int) $_GET['poli'];
 $query = $conn->query("SELECT * FROM users WHERE role='dokter'");
+$query2 = $conn->query("SELECT * FROM poli_tindakan ");
+$query3 = "SELECT * FROM antrian WHERE id = '$antri_id'";
+$result3 = mysqli_query($conn,$query3);
+$row3 = mysqli_fetch_array($result3);
 ?>
 
 <div class="content-wrapper">
     <div class="container-fluid">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.php">Dashboard</a>
+          <a href="dashboard.php">Dashboard</a>
         </li>
         <li class="breadcrumb-item">
         	<a href="antrianhal.php"> List Antrian</a>
@@ -19,24 +23,29 @@ $query = $conn->query("SELECT * FROM users WHERE role='dokter'");
      <div class="card card-login mx-auto mt-5">
       <div class="card-header">Form Periksa</div>
       <div class="card-body">
-        <form  method="POST" action="behind/addperiksa.php?antri=<?php echo $antrian; ?>">
+        <form  method="POST" action="behind/addperiksa.php?addantri=<?php echo $antri_id; ?>&poli=<?php echo $idpoli; ?>">
           <div class="form-group">
-
-            <label for="exampleInputEmail1">Nama Tindakan</label>
-            <textarea class="form-control" type="text" aria-describedby="alamat"  name="action" required> </textarea>
+          <label>Nama Pasien</label>
+          <input type="text" class="form-control" placeholder="<?php echo $row3["nama_pasien"];?>" disabled>
+            <label>Tindakan</label>
+            <select name="action" class="form-control" aria-describedby="Poliklinik"> 
+            <option value ="0" >Pilih tindakan</option>
+            <?php 
             
-            <label for="exampleInputEmail1">Biaya</label>
-            <input class="form-control"  type="number" aria-describedby="Harga" placeholder="Biaya" name="biaya" required >
+            while ($row2 = $query2->fetch_array()) { ?>
+            <option value="<?php echo $row2["id"]?>"> <?php echo $row2["nama_tindakan"]; ?></option> <?php }?>
+        </select>
+            
             <label for="exampleInputEmail1">Nama Dokter</label>
             <select name="dokter" class="form-control" aria-describedby="Poliklinik"> 
-            <option value ="0" selected>Pilih Dokter</option>
+            <option value ="0" >Pilih Dokter</option>
             <?php 
             
             while ($row = $query->fetch_array()) { ?>
-            <option value="<?php echo $row["id"]?>"> <?php echo $row["nama_lengkap"] ?></option> <?php }?>
+            <option value="<?php echo $row["id"]?>"> <?php echo $row["id"].$row["nama_lengkap"]; ?></option> <?php }?>
         </select>
             <div style="text-align: center; margin-top: 4%;">
-            <button name="addaction" class="btn btn-success">Simpan/button>
+            <button name="addaction" class="btn btn-success">Simpan</button>
             <a onclick="if(confirm('Apakah anda ingin membatalkan tindakan ?')) { window.location = 'antrianhal.php' }" class="btn btn-danger">Batal</a>
             </div >
 

@@ -3,6 +3,7 @@ include "behind/nyambung.php";
 $date2 = date("d-m-Y");
 $date = date("Y-m-d");
 $time = date("h:m:s");
+
 ?>
 
 <div class="content-wrapper">
@@ -39,7 +40,7 @@ $time = date("h:m:s");
      		</tr>
             <?php 
             $idpoli = (int) $_POST['poli'];
-            $query=$conn->query("SELECT * FROM antrian JOIN poli on poli.id = antrian.poli_id  WHERE poli_id = '$idpoli' AND tanggal = '$date'  ");
+            $query=$conn->query("SELECT antrian.id, antrian.nama_pasien, antrian.no_antrian, poli.nama_poli FROM antrian JOIN poli on poli.id = antrian.poli_id  WHERE poli_id = '$idpoli' AND tanggal = '$date'  ");
             $urut = 0;
             while ($row = $query->fetch_array()){ $urut++; ?>
             <tr align="center">  
@@ -49,7 +50,7 @@ $time = date("h:m:s");
              <td ><?php echo $row["no_antrian"] ?></td>
              <td ><?php echo $row["nama_poli"] ?></td>  
              <td >
-                <a href="formperiksa.php?poli=<?php echo $row["poli_id"];?>&antri=<?php echo $row["no_antrian"]; ?>" class="btn btn-success">tindakan</a>
+                <a href="formperiksa.php?poli=<?php echo $idpoli ;?>&idantri=<?php echo $row["id"]; ?>" class="btn btn-success">tindakan</a>
             </td> 
             </tr> <?php } ?>         
      </table> 
