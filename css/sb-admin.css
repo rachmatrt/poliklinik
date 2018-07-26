@@ -449,6 +449,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 
 .card-login {
   max-width: 25rem;
+  border: none;
 }
 
 .card-register {

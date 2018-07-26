@@ -23,7 +23,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.php">Poliklinik Surabaya</a >
     <div style="margin-left: 80%;">
-    <a class="btn btn-primary" href="archive/login.php">
+    <a class="btn btn-primary" href="login.php">
             <i class="fa fa-fw fa-sign-in"></i>
             <span class="nav-link-text">Login</span>
           </a>

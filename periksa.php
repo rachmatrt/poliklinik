@@ -1,5 +1,6 @@
 <?php include "archive/header.php";
 include "behind/nyambung.php"; 
+include "auth/admin.php";
 $date2 = date("d-m-Y");
 $date = date("Y-m-d");
 $time = date("h:m:s");
@@ -32,14 +33,15 @@ $time = date("h:m:s");
      		</tr>
             <?php 
             
-            $query= $conn->query("SELECT * FROM pemeriksaan JOIN poli_tindakan on poli_tindakan.id = pemeriksaan.tindakan_id JOIN users ON users.id = pemeriksaan.dokter_id JOIN antrian ON antrian.id = pemeriksaan.antrian_id group by antrian_id ORDER BY tanggal ='$date' ");
-            
-            while ($row = $query->fetch_array()){ $urut++; 
-            $poline = (int) $row["poli_id"];
-            $query2 = "SELECT * FROM poli JOIN antrian ON antrian.poli_id = poli.id where poli_id = '$poline'";
-            $result2 = mysqli_query($conn,$query2);
-            $row2 = mysqli_fetch_array($result2);
-
+                $query= $conn->query("SELECT * FROM pemeriksaan JOIN poli_tindakan on poli_tindakan.id = pemeriksaan.tindakan_id JOIN users ON users.id = pemeriksaan.dokter_id JOIN antrian ON antrian.id = pemeriksaan.antrian_id group by antrian_id ORDER BY tanggal ='$date' ");
+                
+                $urut = 0;
+                while ($row = $query->fetch_array()){ 
+                    $urut++; 
+                    $poline = (int) $row["poli_id"];
+                    $query2 = "SELECT * FROM poli JOIN antrian ON antrian.poli_id = poli.id where poli_id = '$poline'";
+                    $result2 = mysqli_query($conn,$query2);
+                    $row2 = mysqli_fetch_array($result2);
             ?>
             <tr align="center">  
              <td ><?php echo $urut; ?> </td>
@@ -51,8 +53,8 @@ $time = date("h:m:s");
              <td ><?php echo $row2["nama_poli"]; ?></td>
              <td >
                <a href="bayar.php?poli=<?php echo $poline; ?>&antri=<?php echo $row["id"];?>" class="btn btn-success"> Bayar </a>
-                <a href="cetak.php?idpoli=<?php echo $poline; ?>&antri=<?php echo $row["id"];?>&dokter=<?php echo $row["dokter_id"];?>&action=<?php echo $row["tindakan_id"]; ?>" class="btn btn-warning"> Cetak </a>
-                <a href="" class="btn btn-danger">Upload</a>
+                <a href="cetak.php?antri=<?php echo $row["id"]?>" class="btn btn-warning"> Cetak </a>
+                <!-- <a href="" class="btn btn-danger">Upload</a> -->
             </td> 
            <?php $conn->error; } ?>
             </tr>          

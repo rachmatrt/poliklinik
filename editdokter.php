@@ -1,5 +1,6 @@
 <?php include "archive/header.php";
 include "behind/nyambung.php";
+include "auth/admin.php";
 $idedit = (int) $_GET["id"];
 $query = "SELECT * from users where id ='$idedit'";
 $result = mysqli_query($conn,$query);

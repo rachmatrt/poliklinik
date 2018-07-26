@@ -1,5 +1,8 @@
-<?php include "archive/header.php";
+<?php 
+include "archive/header.php";
 include "behind/nyambung.php";
+include "auth/admin.php";
+
 $antri_id = (int) $_GET['idantri'];
 $idpoli = (int) $_GET['poli'];
 $query = $conn->query("SELECT * FROM users WHERE role='dokter'");

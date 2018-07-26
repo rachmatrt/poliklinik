@@ -23,7 +23,7 @@ $time = date("h:m:s");
             <option value="<?php echo $row["id"]?>"><?php echo $row["nama_poli"] ?></option> <?php }?>
             </select> 
             <div style="text-align: center; margin-top: 4%;">
-            <button class="btn btn-success">Daftar</button>
+            <button class="btn btn-success">Ambil Antrian</button>
             </div >
           </div>
     	</form>	
@@ -62,7 +62,7 @@ $time = date("h:m:s");
       <?php }?>  
     </div>
 
-    <div class="row">
+    <!-- <div class="row">
         <?php 
             $query = $conn->query("SELECT * FROM poli");
             while ($row = $query->fetch_array()) { ?>
@@ -97,7 +97,7 @@ $time = date("h:m:s");
       
       </div>
       <?php }?> 
-     </div>
+     </div> -->
     </div>
    </div >
    </div> 

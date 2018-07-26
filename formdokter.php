@@ -1,4 +1,8 @@
-<?php include "archive/header.php";?>
+<?php 
+include "archive/header.php";
+include "auth/admin.php";
+
+?>
 
 <div class="content-wrapper">
     <div class="container-fluid">

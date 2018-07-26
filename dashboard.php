@@ -1,6 +1,7 @@
 <?php 
 include "archive/header.php" ; 
 include "behind/nyambung.php";
+include "auth/admin.php";
 $date = date("d-m-Y");
 $time = date("h:m:s");?>
 

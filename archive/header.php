@@ -60,17 +60,23 @@
             <span class="nav-link-text">Master Obat</span>
           </a>
         </li>
-         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Master Poliklinik">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Master Poliklinik">
           <a class="nav-link" href="poli.php">
             <i class="fa fa-fw fa-heartbeat"></i>
             <span class="nav-link-text">Master Poliklinik</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Master Poliklinik">
+          <a class="nav-link" href="log.php">
+            <i class="fa fa-fw fa-heartbeat"></i>
+            <span class="nav-link-text">Log</span>
           </a>
         </li>
         
       </ul>
        <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Logout">
-          <a class="nav-link text-center" href="index.php">
+          <a class="nav-link text-center" href="../behind/logout.php">
             <i class="fa fa-fw fa-sign-out" style="font-size: 24px;"></i>
             </a>
         </li>

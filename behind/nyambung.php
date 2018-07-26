@@ -1,8 +1,8 @@
 <?php 
 	$host = "localhost";
 	$username = "root";
-	$password = "rachmat7224628";
-	$dbname = "db_poliklinik"; 
+	$password = "";
+	$dbname = "db_poli"; 
 
 	$conn = mysqli_connect($host,$username,$password,$dbname);
 	if ($conn) {

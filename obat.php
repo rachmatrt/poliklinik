@@ -1,5 +1,6 @@
 <?php include "archive/header.php";
 include "behind/nyambung.php"; 
+include "auth/admin.php";
 $query=$conn->query("SELECT * FROM obat ");
 $urut = 0;
 ?>
