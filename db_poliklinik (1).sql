@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 25, 2018 at 08:51 AM
+-- Generation Time: Jul 27, 2018 at 05:16 PM
 -- Server version: 5.7.22-0ubuntu0.16.04.1
 -- PHP Version: 7.0.30-0ubuntu0.16.04.1
 
@@ -81,7 +81,13 @@ INSERT INTO `antrian` (`id`, `nama_pasien`, `no_antrian`, `tanggal`, `poli_id`) 
 (46, 'kkk', 2, '2018-07-24', 0),
 (47, 'asdasd', 3, '2018-07-24', 0),
 (48, 'aaa', 2, '2018-07-24', 1),
-(49, 'dani', 3, '2018-07-24', 1);
+(49, 'dani', 3, '2018-07-24', 1),
+(50, 'asdasd', 1, '2018-07-26', 1),
+(51, 'asdasd', 2, '2018-07-26', 1),
+(52, 'asdasd', 3, '2018-07-26', 1),
+(53, 'HAIJE', 1, '2018-07-26', 3),
+(54, 'Rachmat', 1, '2018-07-27', 3),
+(55, 'RT', 1, '2018-07-27', 1);
 
 -- --------------------------------------------------------
 
@@ -143,15 +149,19 @@ CREATE TABLE `pembayaran` (
   `total_bayar` int(20) NOT NULL,
   `diterima` int(20) NOT NULL,
   `kembalian` int(20) NOT NULL,
-  `tanggal` datetime NOT NULL
+  `tanggal` date NOT NULL,
+  `bukti` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pembayaran`
 --
 
-INSERT INTO `pembayaran` (`id`, `antrian_id`, `total_bayar`, `diterima`, `kembalian`, `tanggal`) VALUES
-(1, 49, 500, 700, 200, '2018-07-24 21:58:53');
+INSERT INTO `pembayaran` (`id`, `antrian_id`, `total_bayar`, `diterima`, `kembalian`, `tanggal`, `bukti`) VALUES
+(1, 49, 500, 700, 200, '2018-07-24', 'cetaknyoba.png'),
+(2, 53, 300, 1000, 700, '2018-07-26', 'terupload/cetaknyoba.png'),
+(3, 54, 300, 500, 200, '2018-07-27', 'terupload/nyoba1.png'),
+(4, 55, 100, 500, 400, '2018-07-27', 'terupload/cetaknyoba.png');
 
 -- --------------------------------------------------------
 
@@ -178,7 +188,11 @@ INSERT INTO `pemeriksaan` (`id`, `tindakan_id`, `dokter_id`, `antrian_id`) VALUE
 (5, 1, 6, 43),
 (6, 2, 6, 43),
 (7, 3, 6, 49),
-(8, 2, 0, 49);
+(8, 2, 0, 49),
+(9, 1, 6, 52),
+(10, 3, 7, 53),
+(11, 3, 7, 54),
+(12, 1, 6, 55);
 
 -- --------------------------------------------------------
 
@@ -246,10 +260,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `nama_lengkap`, `alamat`, `role`, `token`, `created_at`, `updated_at`) VALUES
-(6, 'ZulfikarUsername', '   Zulfikar123   ', 'Zulfikar, Sp.M', 'Jl Kedangan 16A No 27 Surabaya', 'dokter', '', '2018-07-20 06:07:10', '2018-07-21 00:07:42'),
-(7, 'Suyana', 'Suayan123', 'Suyana', 'Jl Diponegoro', 'dokter', '', '2018-07-21 11:07:24', '2018-07-21 04:07:24'),
-(8, 'Suryana', 'suryana123', 'Suryana', 'Jl Kedangan 16A No 28 Surabaya', 'dokter', '', '2018-07-22 09:07:34', '2018-07-22 02:07:29'),
-(9, 'Bagio', 'Bagio123', 'Bagio', 'Jl Kedangan 16A No 30 Surabaya', 'dokter', '', '2018-07-22 09:07:57', '2018-07-22 02:07:51');
+(6, 'ZulfikarUsername', '   Zulfikar123   ', 'Zulfikar, Sp.M', 'Jl Kedangan 16A No 27 Surabaya', 'dokter', 'j1andad45db01e4aad8hfjcee8ig1ih4jma', '2018-07-20 06:07:10', '2018-07-26 17:14:31'),
+(7, 'Suyana', 'Suayan123', 'Suyana', 'Jl Diponegoro', 'dokter', 'j1andad45db01e4aad8hfjcee8ig1ih4jma', '2018-07-21 11:07:24', '2018-07-26 17:14:31'),
+(8, 'Suryana', 'suryana123', 'Suryana', 'Jl Kedangan 16A No 28 Surabaya', 'dokter', 'j1andad45db01e4aad8hfjcee8ig1ih4jma', '2018-07-22 09:07:34', '2018-07-26 17:14:31'),
+(9, 'Bagio', 'Bagio123', 'Bagio', 'Jl Kedangan 16A No 30 Surabaya', 'dokter', 'j1andad45db01e4aad8hfjcee8ig1ih4jma', '2018-07-22 09:07:57', '2018-07-26 17:14:31'),
+(10, 'admin', '$2y$10$bqg8Gfb8B0AhVWG8Zl.ySOdfkUfW9l8MMTqzld5b212QknxU.HXRK', 'admin', 'admin', 'admin', 'j1andad45db01e4aad8hfjcee8ig1ih4jma', '2018-07-26 12:24:17', '2018-07-26 17:14:31'),
+(11, 'admine', 'admin123', 'admin', 'admin', 'admin', 'j1andad45db01e4aad8hfjcee8ig1ih4jma', '2018-07-26 12:24:20', '2018-07-26 17:14:31');
 
 --
 -- Indexes for dumped tables
@@ -305,7 +321,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `antrian`
 --
 ALTER TABLE `antrian`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT for table `obat_pasien`
 --
@@ -315,12 +331,12 @@ ALTER TABLE `obat_pasien`
 -- AUTO_INCREMENT for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `pemeriksaan`
 --
 ALTER TABLE `pemeriksaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `poli`
 --
@@ -335,7 +351,7 @@ ALTER TABLE `poli_tindakan`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

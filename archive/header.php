@@ -48,6 +48,12 @@
             <span class="nav-link-text">Master Pemeriksaaan </span>
           </a>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Master Antrianr">
+          <a class="nav-link" href="bayar.php">
+            <i class="fa fa-fw fa-credit-card"></i>
+            <span class="nav-link-text">Master Pembayaran </span>
+          </a>
+        </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Master Dokter">
           <a class="nav-link" href="dokter.php">
             <i class="fa fa-fw fa-user-md"></i>
@@ -76,7 +82,7 @@
       </ul>
        <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Logout">
-          <a class="nav-link text-center" href="../behind/logout.php">
+          <a class="nav-link text-center" href="behind/logout.php">
             <i class="fa fa-fw fa-sign-out" style="font-size: 24px;"></i>
             </a>
         </li>

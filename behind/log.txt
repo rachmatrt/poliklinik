@@ -1,13 +1,12 @@
-26-07-2018 05:21:40 asdasd mengambil nomer antrian di poli Gigi
-26-07-2018 05:21:50 dani mengambil nomer antrian di poli Mata
-26-07-2018 05:22:01 asdasd mengambil nomer antrian di poli Umum
-26-07-2018 05:22:10 asdasd mengambil nomer antrian di poli Mata
-26-07-2018 05:22:17 asdasd mengambil nomer antrian di poli Mata
-26-07-2018 05:22:24 qweqe mengambil nomer antrian di poli Gigi
-26-07-2018 05:23:40 hmmm mengambil nomer antrian di poli Gigi
-26-07-2018 05:25:20 deaje login
-26-07-2018 05:27:01 deaje logout
-26-07-2018 05:27:28 deaje login
-26-07-2018 05:34:38 deaje logout
-26-07-2018 05:34:49 alhamdulillah mengambil nomer antrian di poli Mata
-26-07-2018 05:35:04 deaje login
+26-07-2018 17:59:43 admin logout
+26-07-2018 18:31:01 admin login
+26-07-2018 20:56:13 admin login
+26-07-2018 23:55:51 admin login
+27-07-2018 00:02:00 admin logout
+27-07-2018 00:02:07 Rachmat mengambil nomer antrian di poli Umum
+27-07-2018 00:02:13 admin login
+27-07-2018 00:13:22 admin logout
+27-07-2018 00:13:28 RT mengambil nomer antrian di poli Gigi
+27-07-2018 00:13:36 admin login
+27-07-2018 00:14:31 admin login
+27-07-2018 00:14:33 admin logout

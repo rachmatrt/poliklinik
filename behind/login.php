@@ -1,4 +1,5 @@
 <?php
+	
 	include "nyambung.php";
 	session_start();
 	
@@ -34,7 +35,7 @@
 		}
 	} else {
 	  $_SESSION["notif_error"] = "Username atau Password yang anda masukkan salah.";
-    header('location: ../login.php');
+    	header('location: ../login.php');
 	}
 
 	// $pass = '$2y$10$bqg8Gfb8B0AhVWG8Zl.ySOdfkUfW9l8MMTqzld5b212QknxU.HXRK';

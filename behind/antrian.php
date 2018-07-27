@@ -17,18 +17,19 @@ if($pasien == "" || $idpoli == "" || $idpoli == 0) {
 	header('location: ../index.php');
 }
 else {
+	$poli = $conn->query("SELECT * FROM poli where id = $idpoli")->fetch_array();
+
+	$textlog = $pasien." mengambil nomer antrian di poli ".$poli["nama_poli"];
+	include "log.php";
+	
 	if ($conn->query($masukan) === TRUE) {
 		
 		header('location: ../index.php');
 	} else {
 		echo "Error :" . $masukan . "<br>". $conn->error;
-		//header('location : ../index.php');
+		header('location : ../index.php');
 	}
 
-	$poli = $conn->query("SELECT * FROM poli where id = $idpoli")->fetch_array();
-
-	$textlog = $pasien." mengambil nomer antrian di poli ".$poli["nama_poli"];
-	include "log.php";
 
 	$conn->close();
 }

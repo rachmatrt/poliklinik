@@ -24,8 +24,7 @@ $time = date("h:m:s");
                 <td> Kode </td>
                 <td> Nama Pasien </td>
      			<td> Nama Dokter </td>
-                <td width="500px"> Pemeriksaan </td>
-                <td> Biaya </td>
+                <td> Total Biaya </td>
                 <td> Poliklinik </td>
                 <td> Action </td>
 
@@ -33,7 +32,7 @@ $time = date("h:m:s");
      		</tr>
             <?php 
             
-                $query= $conn->query("SELECT * FROM pemeriksaan JOIN poli_tindakan on poli_tindakan.id = pemeriksaan.tindakan_id JOIN users ON users.id = pemeriksaan.dokter_id JOIN antrian ON antrian.id = pemeriksaan.antrian_id group by antrian_id ORDER BY tanggal ='$date' ");
+                $query= $conn->query("SELECT * FROM pemeriksaan INNER JOIN poli_tindakan on poli_tindakan.id = pemeriksaan.tindakan_id JOIN users ON users.id = pemeriksaan.dokter_id INNER JOIN antrian ON antrian.id = pemeriksaan.antrian_id Where tanggal = '$date' group by antrian.id ");
                 
                 $urut = 0;
                 while ($row = $query->fetch_array()){ 
@@ -45,16 +44,14 @@ $time = date("h:m:s");
             ?>
             <tr align="center">  
              <td ><?php echo $urut; ?> </td>
-             <td ><?php echo $row["id"]; ?></td>          
+             <td ><?php echo $row["antrian_id"]; ?></td>          
              <td ><?php echo $row["nama_pasien"]; ?></td>
              <td ><?php echo $row["nama_lengkap"]; ?></td>
-             <td ><?php echo $row["nama_tindakan"]; ?></td>
              <td ><?php echo $row["biaya_tindakan"]; ?></td>
              <td ><?php echo $row2["nama_poli"]; ?></td>
              <td >
-               <a href="bayar.php?poli=<?php echo $poline; ?>&antri=<?php echo $row["id"];?>" class="btn btn-success"> Bayar </a>
-                <a href="cetak.php?antri=<?php echo $row["id"]?>" class="btn btn-warning"> Cetak </a>
-                <!-- <a href="" class="btn btn-danger">Upload</a> -->
+               <a href="formbayar.php?poli=<?php echo $poline; ?>&antri=<?php echo $row["id"];?>" class="btn btn-success"> Bayar </a>
+               
             </td> 
            <?php $conn->error; } ?>
             </tr>          
